@@ -38,6 +38,11 @@ global.player_yspd_actual = global.player_yspd * global.player_yspd_mod;
 
 // playerstate : 0 = frozen, 1 = ABLE to move, 2 = running, 3 = walking
 global.playerstate = 1;
+
+global.move_key_arr[0] = vk_left;
+global.move_key_arr[1] = vk_right;
+global.move_key_arr[2] = vk_up;
+global.move_key_arr[3] = vk_down;
 </string>
           </argument>
         </arguments>

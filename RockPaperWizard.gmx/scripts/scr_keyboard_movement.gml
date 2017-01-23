@@ -8,7 +8,7 @@
 var keyarr = argument0;
 var checkarr;
 
-for( i = 0; i < keyarr.length; i++ ) {
+for( i = 0; i < array_length_1d(keyarr); i++ ) {
     if (keyboard_check(keyarr[i])) checkarr[i] = 1;
     else checkarr[i] = 0;
 }
