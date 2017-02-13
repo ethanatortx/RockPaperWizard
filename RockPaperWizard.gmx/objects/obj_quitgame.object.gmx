@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="9" enumb="27">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,27 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// global player variables
-
-global.player_xspd = 10;
-global.player_yspd = 10;
-
-global.player_xspd_mod = 1;
-global.player_yspd_mod = 1;
-
-global.player_xspd_actual = global.player_xspd * global.player_xspd_mod;
-global.player_yspd_actual = global.player_yspd * global.player_yspd_mod;
-
-// playerstate : 0 = frozen, 1 = ABLE to move, 2 = running, 3 = walking
-global.player_state = 1;
-
-global.player_deadzone_sens = 0.3;
-global.player_input_device = 0;
-
-global.move_key_arr[0] = vk_up;
-global.move_key_arr[1] = vk_down;
-global.move_key_arr[2] = vk_left;
-global.move_key_arr[3] = vk_right;
+            <string>/// start quit
+game_end();
 </string>
           </argument>
         </arguments>

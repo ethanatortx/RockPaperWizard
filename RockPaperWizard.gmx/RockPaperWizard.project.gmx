@@ -7,19 +7,56 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_player</sprite>
+    <sprite>sprites\spr_tree_pine</sprite>
+    <sprites name="player">
+      <sprite>sprites\spr_player_right</sprite>
+      <sprite>sprites\spr_player_left</sprite>
+      <sprite>sprites\spr_player_up</sprite>
+      <sprite>sprites\spr_player_down</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
-    <background>background\bg_cbble_big</background>
-    <background>background\bg_cbble_small</background>
+    <background>background\bg_grassy_tiles</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scr_keyboard_movement.gml</script>
-    <script>scripts\scr_readsettings.gml</script>
-    <script>scripts\scr_writesettings.gml</script>
+    <scripts name="delta">
+      <script>scripts\scr_delta_apply.gml</script>
+      <script>scripts\scr_delta_apply_basic.gml</script>
+      <script>scripts\scr_delta_check.gml</script>
+      <script>scripts\scr_delta_clock_create.gml</script>
+      <script>scripts\scr_delta_clock_set.gml</script>
+      <script>scripts\scr_delta_clock_step.gml</script>
+      <script>scripts\scr_delta_revert.gml</script>
+      <script>scripts\scr_delta_revert_basic.gml</script>
+    </scripts>
+    <scripts name="player_movement">
+      <script>scripts\scr_move_gamepad.gml</script>
+      <script>scripts\scr_move_keyboard.gml</script>
+    </scripts>
+    <scripts name="utility">
+      <script>scripts\scr_correct_angle.gml</script>
+      <script>scripts\scr_detect_player_direction.gml</script>
+      <script>scripts\scr_point_in_polygon.gml</script>
+      <script>scripts\scr_polygon_collision_TODO.gml</script>
+      <script>scripts\scr_predict_course.gml</script>
+      <script>scripts\scr_rotate_point.gml</script>
+      <script>scripts\scr_rotate_polygon.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
+    <objects name="delta">
+      <object>objects\delta_control</object>
+    </objects>
+    <objects name="overworld">
+      <object>objects\obj_tree</object>
+      <objects name="tree">
+        <object>objects\obj_tree_pine</object>
+      </objects>
+    </objects>
     <object>objects\obj_player</object>
+    <object>objects\obj_player_overworld</object>
+    <object>objects\obj_quitgame</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_test</room>
