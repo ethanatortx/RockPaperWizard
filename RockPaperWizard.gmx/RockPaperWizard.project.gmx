@@ -42,6 +42,7 @@
       <script>scripts\scr_predict_course.gml</script>
       <script>scripts\scr_rotate_point.gml</script>
       <script>scripts\scr_rotate_polygon.gml</script>
+      <script>scripts\scr_attack_swing.gml</script>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -50,9 +51,11 @@
     </objects>
     <objects name="overworld">
       <object>objects\obj_tree</object>
+      <object>objects\obj_enemy_detection_dircle</object>
       <objects name="tree">
         <object>objects\obj_tree_pine</object>
       </objects>
+      <object>objects\obj_low_threat_enemy</object>
     </objects>
     <object>objects\obj_player</object>
     <object>objects\obj_player_overworld</object>
