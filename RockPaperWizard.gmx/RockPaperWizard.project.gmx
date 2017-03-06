@@ -7,12 +7,15 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\spr_player</sprite>
-    <sprite>sprites\spr_tree_pine</sprite>
     <sprites name="player">
       <sprite>sprites\spr_player_right</sprite>
       <sprite>sprites\spr_player_left</sprite>
       <sprite>sprites\spr_player_up</sprite>
       <sprite>sprites\spr_player_down</sprite>
+    </sprites>
+    <sprites name="inanimate">
+      <sprite>sprites\spr_boulder_small</sprite>
+      <sprite>sprites\spr_tree_pine</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -46,20 +49,29 @@
     </scripts>
   </scripts>
   <objects name="objects">
-    <objects name="delta">
-      <object>objects\delta_control</object>
+    <objects name="player">
+      <object>objects\obj_player_overworld</object>
     </objects>
     <objects name="overworld">
-      <object>objects\obj_tree</object>
-      <object>objects\obj_enemy_detection_dircle</object>
       <objects name="tree">
         <object>objects\obj_tree_pine</object>
       </objects>
+      <objects name="rock">
+        <object>objects\obj_boulder_small</object>
+      </objects>
+    </objects>
+    <objects name="enemy">
       <object>objects\obj_low_threat_enemy</object>
     </objects>
-    <object>objects\obj_player</object>
-    <object>objects\obj_player_overworld</object>
-    <object>objects\obj_quitgame</object>
+    <objects name="utility">
+      <object>objects\obj_enemy_detection_dircle</object>
+      <object>objects\delta_control</object>
+      <object>objects\obj_quitgame</object>
+    </objects>
+    <objects name="parents">
+      <object>objects\obj_inanimate_parent</object>
+      <object>objects\obj_player_parent</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_test</room>
