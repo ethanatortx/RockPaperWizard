@@ -27,20 +27,16 @@
             <kind>1</kind>
             <string>/// initialize values
 global.player_xspd = scr_delta_apply(2, true);
-global.player_yspd = scr_delta_apply(2, true);
 global.player_state = 1;
 global.player_health = 100;
 
 global.player_move_xmod = 1;
-global.player_move_ymod = 1;
 
 global.walkSpeedMod = 0.6;
 
 // TEMP
 global.keybinds[0] = vk_left;
 global.keybinds[1] = vk_right;
-global.keybinds[2] = vk_up;
-global.keybinds[3] = vk_down;
 </string>
           </argument>
         </arguments>

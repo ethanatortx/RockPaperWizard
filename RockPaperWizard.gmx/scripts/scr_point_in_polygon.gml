@@ -1,6 +1,5 @@
 /// scr_point_in_polygon(x, y, polygonList)
 
-
 var posX, posY, pList, bit;
 bit = false;
 

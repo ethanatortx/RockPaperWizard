@@ -36,12 +36,13 @@
     <scripts name="player_movement">
       <script>scripts\scr_move_gamepad.gml</script>
       <script>scripts\scr_move_keyboard.gml</script>
+      <script>scripts\scr_move.gml</script>
     </scripts>
     <scripts name="utility">
       <script>scripts\scr_correct_angle.gml</script>
       <script>scripts\scr_detect_player_direction.gml</script>
       <script>scripts\scr_point_in_polygon.gml</script>
-      <script>scripts\scr_polygon_collision_TODO.gml</script>
+      <script>scripts\scr_polygon_collision.gml</script>
       <script>scripts\scr_predict_course.gml</script>
       <script>scripts\scr_rotate_point.gml</script>
       <script>scripts\scr_rotate_polygon.gml</script>
