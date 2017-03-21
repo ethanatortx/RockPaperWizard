@@ -1,4 +1,4 @@
-/// scr_rotate_point(angle, x1, y1)
+/// scrRotatePoint(angle, x1, y1)
 // returns two item array of points: x',y'
 
 // assign input parameters to local variables for readability

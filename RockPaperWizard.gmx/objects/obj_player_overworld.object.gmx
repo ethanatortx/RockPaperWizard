@@ -28,16 +28,24 @@
             <string>/// initialize values
 event_inherited();
 
-global.player_xspd = scr_delta_apply(2, true);
-global.player_yspd = scr_delta_apply(2, true);
+global.playerSpeedX = scrDeltaApply(2, true);
+global.playerSpeedY = scrDeltaApply(2, true);
+// player state guide:
+//      0: frozen
+//      1: able to move
+//      2: moving
+global.playerState = 1;
+global.playerHealth = 100;
 
-global.player_state = 1;
-global.player_health = 100;
+global.playerMoveModX = 1;
+global.playerMoveModY = 1;
 
-global.player_xspd_mod = 1;
-global.player_yspd_mod = 1;
+global.playerPositionX = x;
+global.playerPositionY = y;
+global.playerXLast= 0;
+global.playerYLast = 0;
 
-global.axis_dead_zone = 0;
+global.axisDeadZone = 0;
 global.walkSpeedMod = 0.6;
 
 // TEMP
@@ -67,13 +75,35 @@ global.keybinds[3] = vk_down;
             <kind>1</kind>
             <string>/// define player movement textures in array
 
-global.player_spr_arr = undefined;
-global.player_spr_arr[0] = spr_player_down;
-global.player_spr_arr[1] = spr_player_up;
-global.player_spr_arr[2] = spr_player_left;
-global.player_spr_arr[3] = spr_player_right;
-
-
+global.playerSprArr = undefined;
+global.playerSprArr[0] = spr_player_down;
+global.playerSprArr[1] = spr_player_up;
+global.playerSprArr[2] = spr_player_left;
+global.playerSprArr[3] = spr_player_right;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// update position from global
+scrUpdatePlayerPosFromGlobal();
 </string>
           </argument>
         </arguments>
@@ -99,7 +129,7 @@ global.player_spr_arr[3] = spr_player_right;
             <string>/// movement
 
 // only allow walking if specified
-if (global.player_state &gt; 0) {
+if (global.playerState &gt; 0) {
     event_user(0);
 }
 
@@ -149,7 +179,8 @@ depth = -y; // makes its depth be lower than that of the ones infront of it
           <argument>
             <kind>1</kind>
             <string>/// stop collision with any inanimate object
-
+x = global.playerXLast;
+y = global.playerYLast;
 </string>
           </argument>
         </arguments>
@@ -174,10 +205,11 @@ depth = -y; // makes its depth be lower than that of the ones infront of it
             <kind>1</kind>
             <string>/// do player movement
 
-var hspd = global.player_xspd * global.player_xspd_mod;
-var vspd = global.player_yspd * global.player_yspd_mod;
-var runAnimSpd = scr_delta_apply(.5,true);
+var hspd = global.playerSpeedX * global.playerMoveModX;
+var vspd = global.playerSpeedY * global.playerMoveModY;
+var runAnimSpd = scrDeltaApply(.5,true);
 
+global.axisDeadZone = 0.2;
 var walkThreshold = 0.6;
 var device = global.player_input_device;
 var gpinput = false;
@@ -203,7 +235,7 @@ if (gpinput) {
 
     // check if controller input exists:
     if (haxis != 0 or vaxis != 0) {
-        scr_move_gamepad(hspd,vspd,haxis,vaxis,walkThreshold);
+        scrMoveGamepad(hspd,vspd,haxis,vaxis,walkThreshold);
     } else {
         direction = 0;
         speed = 0;
@@ -218,7 +250,7 @@ if (gpinput) {
     keyArr[2] = global.keybinds[2]; // up
     keyArr[3] = global.keybinds[3]; // down
 
-    scr_move_keyboard(hspd,vspd,keyArr);
+    scrMoveKeyboard(hspd,vspd,keyArr);
 }
 </string>
           </argument>

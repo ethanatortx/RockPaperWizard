@@ -4,7 +4,7 @@ for (var i=0;i<=11;i++)
     if (ds_grid_get(clock, 1, i) == true)
     {
         var new_time = ds_grid_get(clock, 0, i);
-        new_time -= scr_delta_apply(1, true);
+        new_time -= scrDeltaApply(1, true);
         ds_grid_set(clock, 0, i, new_time);
     }
     

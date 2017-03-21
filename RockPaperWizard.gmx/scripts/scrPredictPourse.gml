@@ -1,4 +1,4 @@
-/// scr_predict_course(instance, steps)
+/// scrPredictCourse(instance, steps)
 
 // script for calculating projectile paths
 // only works for physics objects

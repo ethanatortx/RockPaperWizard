@@ -87,9 +87,9 @@ event_user(0);
             <string>/// do circle detection
 
 // detect whether or not player is in radius
-if (point_in_circle(obj_player_main.x,obj_player_main.y,x,y,detRadius)) {
+if (point_in_circle(global.playerPositionX,global.playerPositionY,x,y,detRadius)) {
     if (detCounter &gt; 0) {
-        detCounter-= scr_delta_apply(1,true);
+        detCounter-= scrDeltaApply(1,true);
     } else {
         activate = true;
     }
