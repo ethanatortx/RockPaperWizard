@@ -232,8 +232,8 @@ if (activated) {
             <kind>1</kind>
             <string>/// calculate swing attack and check whether player is within swing radius
 swingSpeed *= global.delta;
-if (swingArc &lt; swingArcMax) {
-    
+if (swingArc &lt; swingArcMax)
+{    
     swingArc += swingSpeed;
     within = scr_attack_swing(x,y,playerX,playerY,swingOffset+angleSnapshot,swingArc,swingRange);
     draw = true;
