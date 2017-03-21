@@ -246,7 +246,7 @@ if (swingArc &lt; swingArcMax) {
 swingSpeed /= global.delta;
 
 if (within) {
-    global.player_health -= swingDamage;
+    global.playerHealth -= swingDamage;
     attacking = false;
 }
 </string>
@@ -277,7 +277,7 @@ draw_text(0,0,angleWithPlayer);
 draw_text(0,20,distToPlayer);
 draw_text(0,40,activated);
 draw_text(0,60,detCounter);
-draw_text(0,80,global.player_health);
+draw_text(0,80,global.playerHealth);
 draw_text(0,100,within);
 if (draw) {
     if (ds_exists(list,ds_type_list)) {

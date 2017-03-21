@@ -13,7 +13,7 @@ var r = argument4; // circle radius
 // checking inside radius
 var circleCheckFloat = (sqr(haxis) + sqr(vaxis) - sqr(r)); // gives float for whether the axis movement is inside or outside the circle
 
-var angle = scr_correct_angle(0,0,haxis,vaxis);
+var angle = scrCorrectAngle(0,0,haxis,vaxis);
 
 // if circleCheckFloat is < 0, it is inside the radius of defined movement
 if (circleCheckFloat < 0) {
@@ -30,5 +30,9 @@ else if (circleCheckFloat >= 0) {
 var relativeSpeed; // speed at angle
 relativeSpeed = sqrt(sqr(newHorizontalSpd) + sqr(newVerticalSpd));
 
-direction = angle; // set angle to angle of joystick
-speed = relativeSpeed; // set speed to hypotenuse of joystick angle and both axes
+var xchange, ychange;
+xchange = dcos(angle)*relativeSpeed;
+ychange = dsin(angle)*relativeSpeed*-1;
+
+scrIncrementGlobalPlayerPos(xchange, ychange);
+scrUpdateOverworldPlayerSprite(angle);

@@ -206,8 +206,8 @@ if(ds_stack_size(time_skip_stack) &gt; 0)
     ny = ds_stack_pop(time_skip_stack);
     nh = ds_stack_pop(time_skip_stack);
     if(nh &gt; t_health) t_health = nh;
-    obj_player_main.x = nx;
-    obj_player_main.y = ny;
+    global.playerPositionX = nx;
+    global.playerPositionY = ny;
 }
 else
 {

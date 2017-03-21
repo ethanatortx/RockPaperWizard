@@ -7,8 +7,6 @@ var hspd = argument0;
 var vspd = argument1;
 var keyArr = argument2; // which keys to check for input
 
-var spr;
-
 var lkey = keyboard_check(keyArr[0]);
 var rkey = keyboard_check(keyArr[1]);
 var ukey = keyboard_check(keyArr[2]);
@@ -35,61 +33,49 @@ if (ukey and !dkey) {
 
 var angle;
 var relativeSpd;
+var hactual, vactual;
+hactual = 0;
+vactual = 0;
 
-if (haxis == 0 && vaxis == 0) { // no input
-    spr = sprite_index;
-    angle = direction;
-    relativeSpd = 0;
+if(haxis != 0 || vaxis != 0)
+{
+    hactual = hspd * haxis;
+    vactual = vspd * vaxis;
+    
+    if (haxis == 1 && vaxis == 0) { // straight right
+        angle = 0;
+    }
+    else if (haxis == 1 && vaxis == -1) { // right and up diagonal
+        angle = 45;
+    }
+    else if (haxis == 0 && vaxis == -1) { // straight up
+        angle = 90;
+    }
+    else if (haxis == -1 && vaxis == -1) { // left and up diagonal
+        angle = 135;
+    }
+    else if (haxis == -1 && vaxis == 0) { // straight left
+        angle = 180;
+    }
+    else if (haxis == -1 && vaxis == 1) { // bottom and left diagonal
+        angle = 225;
+    }
+    else if (haxis == 0 && vaxis == 1) { // straight down
+        angle = 270;
+    }    
+    else if (haxis == 1 && vaxis == 1) { // down and right diagonal
+        angle = 315;
+    }
+}
+else
+{
+    var s = scrGetCurrentPlayerSprite();
+    if(s == "spr_player_down") angle = 270;
+    else if(s == "spr_player_up") angle = 90;
+    else if(s == "spr_player_left") angle = 180;
+    else if(s == "spr_player_right") angle = 0;
+    else angle = 0;
 }
 
-if (haxis == 1 && vaxis == 0) { // straight right
-    spr = spr_player_right;
-    relativeSpd = hspd;
-    angle = 0;
-}
-
-if (haxis == 1 && vaxis == -1) { // right and up diagonal
-    spr = spr_player_up;
-    relativeSpd = sqrt(sqr(hspd) + sqr(vspd));
-    angle = 45;
-}
-
-if (haxis == 0 && vaxis == -1) { // straight up
-    spr = spr_player_up;
-    relativeSpd = vspd;
-    angle = 90;
-}
-
-if (haxis == -1 && vaxis == -1) { // left and up diagonal
-    spr = spr_player_up;
-    relativeSpd = sqrt(sqr(hspd) + sqr(vspd));
-    angle = 135;
-}
-
-if (haxis == -1 && vaxis == 0) { // straight left
-    spr = spr_player_left;
-    relativeSpd = hspd;
-    angle = 180;
-}
-
-if (haxis == -1 && vaxis == 1) { // bottom and left diagonal
-    spr = spr_player_down;
-    relativeSpd = sqrt(sqr(hspd) + sqr(vspd));
-    angle = 225;
-}
-
-if (haxis == 0 && vaxis == 1) { // straight down
-    spr = spr_player_down;
-    relativeSpd = vspd;
-    angle = 270;
-}
-
-if (haxis == 1 && vaxis == 1) { // down and right diagonal
-    spr = spr_player_down;
-    relativeSpd = sqrt(sqr(hspd) + sqr(vspd));
-    angle = 315;
-}
-
-direction = angle;
-speed = relativeSpd;
-sprite_index = spr;
+scrIncrementGlobalPlayerPos(hactual, vactual);
+scrUpdateOverworldPlayerSprite(angle);

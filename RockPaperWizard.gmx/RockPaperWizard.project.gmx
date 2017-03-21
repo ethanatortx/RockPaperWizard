@@ -33,9 +33,14 @@
       <script>scripts\scrDeltaRevert.gml</script>
       <script>scripts\scrDeltaRevertBasic.gml</script>
     </scripts>
-    <scripts name="player_movement">
+    <scripts name="player">
       <script>scripts\scrMoveGamepad.gml</script>
       <script>scripts\scrMoveKeyboard.gml</script>
+      <script>scripts\scrIncrementGlobalPlayerPos.gml</script>
+      <script>scripts\scrUpdateGlobalPlayerPos.gml</script>
+      <script>scripts\scrUpdatePlayerPosFromGlobal.gml</script>
+      <script>scripts\scrUpdateOverworldPlayerSprite.gml</script>
+      <script>scripts\scrGetCurrentPlayerSprite.gml</script>
     </scripts>
     <scripts name="utility">
       <script>scripts\scrCorrectAngle.gml</script>
