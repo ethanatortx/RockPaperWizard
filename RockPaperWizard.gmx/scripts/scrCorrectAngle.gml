@@ -1,4 +1,4 @@
-/// scr_correct_angle(cx, cy, px, py)
+/// scrCorrectAngle(cx, cy, px, py)
 
 var cx, cy, px, py, xdif, ydif;
 cx = argument0;

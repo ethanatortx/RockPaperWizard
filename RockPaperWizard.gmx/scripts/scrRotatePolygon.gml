@@ -1,4 +1,4 @@
-/// scr_rotate_polygon(angle,pointList)
+/// scrRotatePolygon(angle,pointList)
 
 //  rotate supplied polygon on supplied angle
 //
@@ -26,7 +26,7 @@ var temp;
 for (i = 0; i < ds_list_size(pList)/2; i++) {
     
     // rotate current point x[i], y[i] : index i, 2i
-    temp = scr_rotate_point(a, ds_list_find_value( pList, i ) - x0, ds_list_find_value( pList, i + (ds_list_size(pList)/2) ) - y0);
+    temp = scrRotatePoint(a, ds_list_find_value( pList, i ) - x0, ds_list_find_value( pList, i + (ds_list_size(pList)/2) ) - y0);
     
     // add transformed points to new list
     ds_list_insert( retList, i, temp[0] + x0 );

@@ -24,29 +24,34 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="delta">
-      <script>scripts\scr_delta_apply.gml</script>
-      <script>scripts\scr_delta_apply_basic.gml</script>
-      <script>scripts\scr_delta_check.gml</script>
-      <script>scripts\scr_delta_clock_create.gml</script>
-      <script>scripts\scr_delta_clock_set.gml</script>
-      <script>scripts\scr_delta_clock_step.gml</script>
-      <script>scripts\scr_delta_revert.gml</script>
-      <script>scripts\scr_delta_revert_basic.gml</script>
+      <script>scripts\scrDeltaApply.gml</script>
+      <script>scripts\scrDeltaApplyBasic.gml</script>
+      <script>scripts\scrDeltaCheck.gml</script>
+      <script>scripts\scrDeltaClockCreate.gml</script>
+      <script>scripts\scrDeltaClockSet.gml</script>
+      <script>scripts\scrDeltaClockStep.gml</script>
+      <script>scripts\scrDeltaRevert.gml</script>
+      <script>scripts\scrDeltaRevertBasic.gml</script>
     </scripts>
     <scripts name="player_movement">
-      <script>scripts\scr_move_gamepad.gml</script>
-      <script>scripts\scr_move_keyboard.gml</script>
-      <script>scripts\scr_move.gml</script>
+      <script>scripts\scrMoveGamepad.gml</script>
+      <script>scripts\scrMoveKeyboard.gml</script>
     </scripts>
     <scripts name="utility">
-      <script>scripts\scr_correct_angle.gml</script>
-      <script>scripts\scr_detect_player_direction.gml</script>
-      <script>scripts\scr_point_in_polygon.gml</script>
-      <script>scripts\scr_polygon_collision.gml</script>
-      <script>scripts\scr_predict_course.gml</script>
-      <script>scripts\scr_rotate_point.gml</script>
-      <script>scripts\scr_rotate_polygon.gml</script>
-      <script>scripts\scr_attack_swing.gml</script>
+      <script>scripts\scrCorrectAngle.gml</script>
+      <script>scripts\scrDetectPlayerDirection.gml</script>
+      <script>scripts\scrPointInPolygon.gml</script>
+      <script>scripts\scrPolygonCollision.gml</script>
+      <script>scripts\scrPredictPourse.gml</script>
+      <script>scripts\scrRotatePoint.gml</script>
+      <script>scripts\scrRotatePolygon.gml</script>
+      <script>scripts\scrAttackSwing.gml</script>
+    </scripts>
+    <scripts name="abilities">
+      <scripts name="time shift">
+        <script>scripts\scrUpdateTimeStack.gml</script>
+        <script>scripts\scrTrimTimeStack.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -72,6 +77,9 @@
     <objects name="parents">
       <object>objects\obj_inanimate_parent</object>
       <object>objects\obj_player_parent</object>
+    </objects>
+    <objects name="abilities">
+      <object>objects\obj_time_shift_control</object>
     </objects>
   </objects>
   <rooms name="rooms">

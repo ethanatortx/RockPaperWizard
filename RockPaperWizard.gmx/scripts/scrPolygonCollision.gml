@@ -1,4 +1,4 @@
-/// scr_polygon_collision(pointListOne, pointListTwo)
+/// scrPolygonCollision(pointListOne, pointListTwo)
 
 // grid of points making up polygon one
 var poly_one = argument0;
@@ -19,7 +19,7 @@ for(i = 0; i < points_in_two; ++i)
         // grap points
         px = poly_one[k];
         py = poly_one[++k]; // and iterate one extra
-        if (scr_point_in_polygon(px, py, poly_two))
+        if (scrPointInPolygon(px, py, poly_two))
         {
             return true;
         }

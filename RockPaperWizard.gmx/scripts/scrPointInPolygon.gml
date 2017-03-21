@@ -1,6 +1,5 @@
 /// scrPointInPolygon(x, y, polygonList)
 
-
 var posX, posY, pList, bit;
 bit = false;
 
