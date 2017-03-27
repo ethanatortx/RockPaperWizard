@@ -32,7 +32,6 @@ if (ukey and !dkey) {
 }
 
 var angle;
-var relativeSpd;
 var hactual, vactual;
 hactual = 0;
 vactual = 0;
@@ -77,5 +76,5 @@ else
     else angle = 0;
 }
 
-scrIncrementGlobalPlayerPos(hactual, vactual);
+scrUpdateSpeedFromSlope(obj_player_overworld, global.playerPositionX, global.playerPositionY, global.playerPositionX+hactual, global.playerPositionY+vactual);
 scrUpdateOverworldPlayerSprite(angle);

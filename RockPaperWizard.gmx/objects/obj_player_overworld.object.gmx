@@ -42,8 +42,8 @@ global.playerMoveModY = 1;
 
 global.playerPositionX = x;
 global.playerPositionY = y;
-global.playerXLast= 0;
-global.playerYLast = 0;
+global.playerXLast= x;
+global.playerYLast = y;
 
 global.axisDeadZone = 0;
 global.walkSpeedMod = 0.6;
@@ -104,30 +104,6 @@ global.playerSprArr[3] = spr_player_right;
             <kind>1</kind>
             <string>/// update player position
 scrUpdateGlobalPlayerPos(x, y);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// update speed from global position
-scrUpdateSpeedFromSlope(id, global.playerXLast, global.playerYLast, global.playerPositionX, global.playerPositionY);
 </string>
           </argument>
         </arguments>

@@ -49,10 +49,6 @@ time_skip_stack = ds_stack_create();
 // time tracking
 current_tick = 0;
 
-// cooldown time in seconds
-cooldown = 3;
-// whether or not ability is on cooldown
-on_cooldown = false;
 // whether or not ability is active
 is_active = false;
 
@@ -134,47 +130,14 @@ if(current_tick++ &gt;= (room_speed/snapshot_frequency))
             <kind>1</kind>
             <string>/// trigger time skip if player presses time skip key
 
-if((keyboard_check(ord("e")) || keyboard_check(ord("E"))) &amp;&amp; (on_cooldown != true))
+if((keyboard_check(ord("e")) || keyboard_check(ord("E"))))
 {
     is_active = true;
-    on_cooldown = true;
 }
 
 if(is_active)
 {
     event_user(0);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// decrease cooldown
-
-if(on_cooldown)
-{
-    cooldown -= global.delta;
-}
-
-if(cooldown &lt;= 0)
-{
-    cooldown = 0;
-    on_cooldown = false;
 }
 </string>
           </argument>
