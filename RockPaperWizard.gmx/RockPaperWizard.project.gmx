@@ -58,6 +58,9 @@
         <script>scripts\scrUpdateTimeStack.gml</script>
         <script>scripts\scrTrimTimeStack.gml</script>
       </scripts>
+      <scripts name="Dash Mechanics">
+        <script>scripts\whatamidoing.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <objects name="objects">
@@ -85,6 +88,7 @@
       <object>objects\obj_player_parent</object>
     </objects>
     <objects name="abilities">
+      <object>objects\obj_dash_object</object>
       <object>objects\obj_time_shift_control</object>
     </objects>
   </objects>
