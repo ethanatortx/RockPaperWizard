@@ -1,8 +1,9 @@
-/// I have no idea what I am doing
+/// Trajectorizes the dash mechacnices direction and applies 
 
 
 var direct = obj_player_overworld.direction; //Gets the direct the player is going when the space key is pressed
 var dist = 1000; //Distance the player will move
+
 if(direct == 0) // Directly Right
 {
     global.playerPositionX = global.playerPositionX + dist;

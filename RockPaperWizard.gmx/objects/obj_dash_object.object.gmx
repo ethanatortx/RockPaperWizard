@@ -53,7 +53,7 @@ usable = false;
             <kind>1</kind>
             <string>///Checks to see if character has triggered ability
 
-if(keyboard_check_pressed("vk_space"))
+if(keyboard_check_pressed(ord("M")))
 {
     usable = true;
 }
@@ -84,10 +84,10 @@ if(usable == true)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Runs throught the dash mechanics
+            <string>///Runs through the dash mechanics
+
 
 whatamidoing();
-
  
 </string>
           </argument>
@@ -113,7 +113,7 @@ whatamidoing();
             <kind>1</kind>
             <string>/// debug
 
-draw_text(100, 0, keyboard_check("vk_left"))
+draw_text(100, 0, usable)
 </string>
           </argument>
         </arguments>
