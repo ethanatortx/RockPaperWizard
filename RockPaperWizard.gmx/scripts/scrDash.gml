@@ -1,4 +1,4 @@
-/// scrWhatAmIDoing(distance, freq)
+/// scrPlayerDash(distance, freq)
 
 
 var direct = obj_player_overworld.direction; //Gets the direct the player is going when the space key is pressed
