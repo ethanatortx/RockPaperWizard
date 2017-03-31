@@ -34,5 +34,5 @@ var xchange, ychange;
 xchange = dcos(angle)*relativeSpeed;
 ychange = dsin(angle)*relativeSpeed*-1;
 
-scrIncrementGlobalPlayerPos(xchange, ychange);
+scrUpdateSpeedFromSlope(obj_player_overworld, global.playerPositionX, global.playerPositionY, global.playerPositionX + xchange, global.playerPositionY + ychange);
 scrUpdateOverworldPlayerSprite(angle);

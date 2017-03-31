@@ -20,6 +20,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grassy_tiles</background>
+    <background>background\bg_grass_solo</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -88,11 +89,11 @@
       <object>objects\obj_player_parent</object>
     </objects>
     <objects name="abilities">
-      <object>objects\obj_dash_object</object>
       <object>objects\obj_time_shift_control</object>
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_test_large</room>
     <room>rooms\rm_test</room>
   </rooms>
   <help>
