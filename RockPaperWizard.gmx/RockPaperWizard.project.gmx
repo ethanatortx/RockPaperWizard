@@ -5,9 +5,99 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
-  <backgrounds name="background"/>
+  <sprites name="sprites">
+    <sprite>sprites\spr_player</sprite>
+    <sprites name="player">
+      <sprite>sprites\spr_player_right</sprite>
+      <sprite>sprites\spr_player_left</sprite>
+      <sprite>sprites\spr_player_up</sprite>
+      <sprite>sprites\spr_player_down</sprite>
+    </sprites>
+    <sprites name="inanimate">
+      <sprite>sprites\spr_boulder_small</sprite>
+      <sprite>sprites\spr_tree_pine</sprite>
+    </sprites>
+  </sprites>
+  <backgrounds name="background">
+    <background>background\bg_grassy_tiles</background>
+    <background>background\bg_grass_solo</background>
+  </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <scripts name="delta">
+      <script>scripts\scrDeltaApply.gml</script>
+      <script>scripts\scrDeltaApplyBasic.gml</script>
+      <script>scripts\scrDeltaCheck.gml</script>
+      <script>scripts\scrDeltaClockCreate.gml</script>
+      <script>scripts\scrDeltaClockSet.gml</script>
+      <script>scripts\scrDeltaClockStep.gml</script>
+      <script>scripts\scrDeltaRevert.gml</script>
+      <script>scripts\scrDeltaRevertBasic.gml</script>
+    </scripts>
+    <scripts name="player">
+      <script>scripts\scrMoveGamepad.gml</script>
+      <script>scripts\scrMoveKeyboard.gml</script>
+      <script>scripts\scrIncrementGlobalPlayerPos.gml</script>
+      <script>scripts\scrUpdateGlobalPlayerPos.gml</script>
+      <script>scripts\scrUpdatePlayerPosFromGlobal.gml</script>
+      <script>scripts\scrUpdateOverworldPlayerSprite.gml</script>
+      <script>scripts\scrGetCurrentPlayerSprite.gml</script>
+      <script>scripts\scrUpdateSpeedFromSlope.gml</script>
+    </scripts>
+    <scripts name="utility">
+      <script>scripts\scrCorrectAngle.gml</script>
+      <script>scripts\scrDetectPlayerDirection.gml</script>
+      <script>scripts\scrPointInPolygon.gml</script>
+      <script>scripts\scrPolygonCollision.gml</script>
+      <script>scripts\scrPredictPourse.gml</script>
+      <script>scripts\scrRotatePoint.gml</script>
+      <script>scripts\scrRotatePolygon.gml</script>
+      <script>scripts\scrAttackSwing.gml</script>
+    </scripts>
+    <scripts name="abilities">
+      <scripts name="time shift">
+        <script>scripts\scrUpdateTimeStack.gml</script>
+        <script>scripts\scrTrimTimeStack.gml</script>
+      </scripts>
+      <scripts name="Dash Mechanics">
+        <script>scripts\scrPlayerDash.gml</script>
+      </scripts>
+    </scripts>
+  </scripts>
+  <objects name="objects">
+    <objects name="player">
+      <object>objects\obj_player_overworld</object>
+    </objects>
+    <objects name="overworld">
+      <objects name="tree">
+        <object>objects\obj_tree_pine</object>
+      </objects>
+      <objects name="rock">
+        <object>objects\obj_boulder_small</object>
+      </objects>
+    </objects>
+    <objects name="enemy">
+      <object>objects\obj_low_threat_enemy</object>
+    </objects>
+    <objects name="utility">
+      <object>objects\obj_enemy_detection_dircle</object>
+      <object>objects\delta_control</object>
+      <object>objects\obj_quitgame</object>
+    </objects>
+    <objects name="parents">
+      <object>objects\obj_inanimate_parent</object>
+      <object>objects\obj_player_parent</object>
+    </objects>
+    <objects name="abilities">
+      <object>objects\obj_time_shift_control</object>
+    </objects>
+  </objects>
+  <rooms name="rooms">
+    <rooms name="Testing ROom">
+      <room>rooms\rm_test_large</room>
+      <room>rooms\rm_test</room>
+    </rooms>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
