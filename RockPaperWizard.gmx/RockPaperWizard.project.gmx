@@ -93,7 +93,10 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <rooms name="Testing ROom">
+    <rooms name="Cave">
+      <room>rooms\SpawnRoom</room>
+    </rooms>
+    <rooms name="Testing rOOM">
       <room>rooms\rm_test_large</room>
       <room>rooms\rm_test</room>
     </rooms>
