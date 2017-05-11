@@ -17,6 +17,6 @@ if(ds_grid_get(clock, 0, 0) > 0)
 else
 {
     ds_grid_destroy(clock);
-    dash_active = false;
+    dashActive = false;
 }
 

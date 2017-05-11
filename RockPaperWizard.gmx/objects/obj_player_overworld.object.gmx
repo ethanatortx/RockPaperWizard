@@ -55,7 +55,14 @@ global.keybinds[2] = vk_up;
 global.keybinds[3] = vk_down;
 
 // abilities
-dash_active = false;
+abilityOneX = 10;
+abilityOneY = 10;
+
+// ability one - dash
+dashActive = false;
+dashCount = 3;
+dashCooldownTime = 3; // in seconds
+dashTrigFrame = 0;
 </string>
           </argument>
         </arguments>
@@ -181,15 +188,15 @@ depth = -y; // makes its depth be lower than that of the ones infront of it
             <kind>1</kind>
             <string>/// omg he pressed q again, so much skill
 
-if(keyboard_check_pressed(ord("Q")) || gamepad_button_check_pressed(0, gp_face2))
+if(keyboard_check_pressed(ord("E")) || gamepad_button_check_pressed(0, gp_face2))
 {
     /* TODO: implement cooldown if check later */
     scrDeltaClockCreate();
     scrDeltaClockSet(0, 3);
-    dash_active = true;
+    dashActive = true;
 }
 
-if(dash_active)
+if(dashActive)
 {
     scrPlayerDash(5);
 }
@@ -312,6 +319,36 @@ if (gpinput) {
             <kind>1</kind>
             <string>/// create game quit object &lt;TESTING ONLY&gt;
 instance_create(0,0,obj_quitgame);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// draw dash icons
+switch(dashCount)
+{
+    case 0: draw_sprite(spr_dash_icon0, 0, abilityOneX, abilityOneY); break;
+    case 1: draw_sprite(spr_dash_icon1, dashTrigFrame, abilityOneX, abilityOneY); break;
+    case 2: draw_sprite(spr_dash_icon2, dashTrigFrame, abilityOneX, abilityOneY); break;
+    case 3: draw_sprite(spr_dash_icon3, dashTrigFrame, abilityOneX, abilityOneY); break;
+}
 </string>
           </argument>
         </arguments>

@@ -220,7 +220,7 @@
     <option_freeze>false</option_freeze>
     <option_frequency>0</option_frequency>
     <option_frontimage>nil</option_frontimage>
-    <option_fullscreen>False</option_fullscreen>
+    <option_fullscreen>True</option_fullscreen>
     <option_gameguid>{0A338B02-8B63-41FF-A3DF-019F04F7A6E4}</option_gameguid>
     <option_gameid>432342243</option_gameid>
     <option_haptic_effects>0</option_haptic_effects>
@@ -514,7 +514,7 @@
     <option_winUAP_certificate_location>WinUWPRunner_TemporaryKey.pfx</option_winUAP_certificate_location>
     <option_winUAP_display_name>RockPaperWizard</option_winUAP_display_name>
     <option_winUAP_internet_capable>0</option_winUAP_internet_capable>
-    <option_winUAP_interpolate>-1</option_winUAP_interpolate>
+    <option_winUAP_interpolate>0</option_winUAP_interpolate>
     <option_winUAP_landscape_allowed>-1</option_winUAP_landscape_allowed>
     <option_winUAP_landscape_flipped_allowed>-1</option_winUAP_landscape_flipped_allowed>
     <option_winUAP_large_logo>Configs\Default\WindowsUAP\logos\LargeLogo.scale-100.png</option_winUAP_large_logo>

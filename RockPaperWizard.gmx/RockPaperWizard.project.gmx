@@ -16,11 +16,19 @@
     <sprites name="inanimate">
       <sprite>sprites\spr_boulder_small</sprite>
       <sprite>sprites\spr_tree_pine</sprite>
+      <sprite>sprites\spr_pedistal</sprite>
     </sprites>
+    <sprite>sprites\spr_dash_icon3</sprite>
+    <sprite>sprites\spr_dash_icon2</sprite>
+    <sprite>sprites\spr_dash_icon1</sprite>
+    <sprite>sprites\spr_dash_icon0</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grassy_tiles</background>
     <background>background\bg_grass_solo</background>
+    <background>background\bg_rocks_night</background>
+    <background>background\bg_rocks_night_grass</background>
+    <background>background\bg_cave_book</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -63,6 +71,7 @@
         <script>scripts\scrPlayerDash.gml</script>
       </scripts>
     </scripts>
+    <script>scripts\scrCalculateInBounds.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="player">
@@ -91,14 +100,17 @@
     <objects name="abilities">
       <object>objects\obj_time_shift_control</object>
     </objects>
+    <object>objects\setup</object>
+    <object>objects\obj_cave_book_encounter</object>
   </objects>
   <rooms name="rooms">
     <rooms name="Cave">
-      <room>rooms\SpawnRoom</room>
+      <room>rooms\rmBookArtifact</room>
+      <room>rooms\rmSpawnRoom</room>
     </rooms>
-    <rooms name="Testing rOOM">
-      <room>rooms\rm_test_large</room>
-      <room>rooms\rm_test</room>
+    <rooms name="Testing Room">
+      <room>rooms\rmTest</room>
+      <room>rooms\rmTestLarge</room>
     </rooms>
   </rooms>
   <help>
